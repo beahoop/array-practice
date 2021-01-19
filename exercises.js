@@ -7,11 +7,11 @@
 
 
 
+function repeat(str, i) {
+return str.repeat(i);
+};
 
-
-
-
-
+repeat('sunshine', 3);
 
 
 // -----------------------------------------------
@@ -22,14 +22,17 @@
 // ---------------------
 
 // Put your answer below -------------------------
+const a = [3,5,7,8]
+let b = reverseArr(a);
+function reverseArray(arr) {
+  let newarr = new Array;
+  for (var i = 0; i < arr.length; i++) {
+    newarr.push(arr[i]);
+  }
+  return newarr
+};
 
-
-
-
-
-
-
-
+console.log(b);
 
 
 // -----------------------------------------------
@@ -40,12 +43,11 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
+let array = [1, false, 7, null, 0]
+function noFalsy(arr) {
+  return arr.filter(Boolean); //using javascript filter with the call back function Boolean that will only return true
+}
+console.log(noFalsy(array));
 
 
 
@@ -60,12 +62,21 @@
 // Put your answer below -------------------------
 
 
+const myArray = [['name', 'Charlie'], ['color', 'brown'], ['age', 10]]
 
+function objArray(arr) {
+  const myObj = {};
+  for (var i = 0; i < arr.length; i++) {
+    // ['name', 'Charlie']
+    const key = arr[i][0];//hey everytime you loop grab the index 0 in the array and set it to key;
+    const value = arr[i][1];
+    //add the key to the object then set the value to the key
+    myObj[key] = value;
+  }
+  return myObj;
+}
 
-
-
-
-
+objArray(myArray);
 
 
 // -----------------------------------------------
@@ -77,12 +88,19 @@
 
 // Put your answer below -------------------------
 
+let array1 = [1,2,3,4,5,4,3]
 
+function removeDup(arr) {
+  noDupArr = []
+  for (var i = 0; i < arr.length; i++) {
+    if(noDupArr.indexOf(arr[i]) === -1){ //if it returns -1 which means it did not find it then push the number thru
+      noDupArr.push(arr[i]);
+    }
+  }
+  return noDupArr;
+};
 
-
-
-
-
+removeDup(array1);
 
 
 
@@ -98,11 +116,37 @@
 
 // Put your answer below -------------------------
 
+function arrMatch(a, b) {
+  if (JSON.stringify(a) === JSON.stringify(b))
+  { return true;
+  } else {
+    return false;
+  }
+};
+arrMatch([1,2, 'c',5], [1,2,3,4]);
+///////https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
 
 
 
-
-
+//1st try
+// function arrMatch(arr1, arr2) {
+//   for (var i = 0; i < arr1.length; i++) {
+//     arr1[i] //this equal what the length of the arr is
+//   }
+//   for (var j = 0; j < arr2.length; j++) {
+//     arr2[j]
+//   }
+//
+//   if ( arr1.indexOf(arr1[i]) === arr2.indexOf(arr[j]) || arr2.indexOf(arr2[j]) === arr1.indexOf(arr1[i])) {
+//     return true;
+//   }else {
+//     return false;
+//   }
+// };
+//
+// arrMatch([1,2,7,3,4], [1,2,3,4,5]);
+//
+// //you are only comparing the length of the arrays not the actual items in them.
 
 
 
