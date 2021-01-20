@@ -5,7 +5,14 @@
 
 // Put your answer below -------------------------
 
+//lets look at this in lap
 
+// function buildArray(str, i) {
+//   const arr = [];
+//   for (var j = 0; i < j.length; j++) {
+//     arr.push(str);
+//   }
+// }
 
 function repeat(str, i) {
   str = `${str}, `;
@@ -25,17 +32,26 @@ console.log(repeat('sunshine', 3));
 // ---------------------
 
 // Put your answer below -------------------------
-const a = [3,5,7,8]
-let b = reverseArr(a);
-function reverseArray(arr) {
-  let newarr = new Array;
-  for (var i = 0; i < arr.length; i++) {
-    newarr.push(arr[i]);
-  }
-  return newarr
-};
+// const a = [3,5,7,8]
+// let b = reverseArr(a);
+// function reverseArray(arr) {
+//   let newarr = new Array;
+//   for (var i = 0; i < arr.length; i++) {
+//     newarr.push(arr[i]);
+//   }
+//   return newarr
+// };
+//>>>
 
-console.log(b);
+const a = [3,5,7,8]
+function reverseArray(arr) {
+  let newarr = [];
+  for (var i = 0; i < arr.length; i++) {
+    newarr.unshift(arr[i]);
+  }
+  return newarr;
+};
+console.log(reverseArray(a));
 
 
 // -----------------------------------------------
@@ -46,7 +62,7 @@ console.log(b);
 
 // Put your answer below -------------------------
 
-let array = [1, false, 7, null, 0]
+let array = [1, false, 7, null, 0, NaN, 9]
 function noFalsy(arr) {
   return arr.filter(Boolean); //using javascript filter with the call back function Boolean that will only return true
 }
@@ -66,6 +82,14 @@ console.log(noFalsy(array));
 
 
 const myArray = [['name', 'Charlie'], ['color', 'brown'], ['age', 10]]
+
+// from class
+// function creatObj(arr) {
+//   const result ={};
+//   for (var i = 0; i < arr.length; i++) {
+//     result[arr[i][0]] = arr[i][1];
+//   }
+// }
 
 function objArray(arr) {
   const myObj = {};
@@ -119,6 +143,22 @@ removeDup(array1);
 
 // Put your answer below -------------------------
 
+// function compareArray(arr1, arr2) {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
+// arr1.sort();
+// arr2.sort();
+// for (var i = 0; i < arr.length; i++) {
+//   if (arr1[i] !== arr2[i]) {
+//     return false;
+//   }
+// }
+//     return true;
+// }
+
+//JavaScript object notation
+//JSON.parse -> changes it back
 function arrMatch(a, b) {
   if (JSON.stringify(a) === JSON.stringify(b))
   { return true;
@@ -177,9 +217,16 @@ arrMatch([1,2, 'c',5], [1,2,3,4]);
 
 
 
-
-
-
+function flattenArray(arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if(Array.isArray(arr[i]))
+    {result = result.concat(flattenArray(arr[i]))
+    }
+  }  else{
+    result.push(arr[i]);
+  }
+}
 
 
 
