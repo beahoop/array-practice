@@ -8,10 +8,13 @@
 
 
 function repeat(str, i) {
+  str = `${str}, `;
 return str.repeat(i);
+
 };
 
-repeat('sunshine', 3);
+console.log(repeat('sunshine', 3));
+
 
 
 // -----------------------------------------------
